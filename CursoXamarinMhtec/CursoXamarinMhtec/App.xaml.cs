@@ -5,6 +5,8 @@ using CursoXamarinMhtec.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Navigation;
+using System;
+using Acr.UserDialogs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CursoXamarinMhtec
@@ -28,9 +30,21 @@ namespace CursoXamarinMhtec
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            RegistrarInstanciasDeNavegacao(containerRegistry);
+            RegistrarInstanciasDosServicos(containerRegistry);
+        }
+
+        private void RegistrarInstanciasDosServicos(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterInstance(UserDialogs.Instance);
+        }
+
+        private static void RegistrarInstanciasDeNavegacao(IContainerRegistry containerRegistry)
+        {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<EsqueciMinhaSenha, EsqueciMinhaSenhaViewModel>();
         }
     }
 }

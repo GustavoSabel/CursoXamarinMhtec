@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CursoXamarinMhtec.Views.EsqueciMinhaSenha"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Button
+                Command="{Binding OnFecharPopup}"
+                HorizontalOptions="EndAndExpand"
+                Text="X" />
+            <Label
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding Email, StringFormat='O email {0} não foi encontrado'}"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

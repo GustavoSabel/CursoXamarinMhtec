@@ -33,7 +33,9 @@
                 HorizontalOptions="FillAndExpand"
                 Keyboard="Email"
                 Placeholder="Phone number or email address"
-                PlaceholderColor="#C4C4C4" />
+                PlaceholderColor="#C4C4C4"
+                ReturnType="Next"
+                Text="{Binding UsuarioModel.Email}" />
 
             <Entry
                 Margin="32,16,32,0"
@@ -41,11 +43,14 @@
                 HorizontalOptions="FillAndExpand"
                 IsPassword="True"
                 Placeholder="Password"
-                PlaceholderColor="#C4C4C4" />
+                PlaceholderColor="#C4C4C4"
+                ReturnCommand="{Binding OnLogar}"
+                Text="{Binding UsuarioModel.Senha}" />
 
             <Button
                 Margin="32,16,32,0"
                 BackgroundColor="{StaticResource CorPrincipal}"
+                Command="{Binding OnLogar}"
                 CornerRadius="8"
                 Text="LOG IN"
                 TextColor="White" />
@@ -55,7 +60,11 @@
                 FontAttributes="Bold"
                 HorizontalOptions="CenterAndExpand"
                 Text="Forgotten password?"
-                TextColor="{StaticResource CorPrincipal}" />
+                TextColor="{StaticResource CorPrincipal}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnEsqueciMinhaSenha}" />
+                </Label.GestureRecognizers>
+            </Label>
 
             <FlexLayout Margin="32,0,32,0">
                 <BoxView
