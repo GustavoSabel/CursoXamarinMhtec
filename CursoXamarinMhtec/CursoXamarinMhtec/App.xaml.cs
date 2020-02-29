@@ -4,6 +4,7 @@ using CursoXamarinMhtec.ViewModels;
 using CursoXamarinMhtec.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Navigation;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CursoXamarinMhtec
@@ -22,14 +23,14 @@ namespace CursoXamarinMhtec
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("/NavigationPage/Login");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
         }
     }
 }

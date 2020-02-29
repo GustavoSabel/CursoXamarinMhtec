@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CursoXamarinMhtec.Views.Login"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <FlexLayout BackgroundColor="{StaticResource CorPrincipal}" HeightRequest="200">
+                <Image Margin="32,0,32,0" Source="logo_mhtec" />
+            </FlexLayout>
+            <Label
+                FontSize="Small"
+                HorizontalOptions="CenterAndExpand"
+                Text="English"
+                TextColor="#C4C4C4">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="English  *  " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="More..."
+                            TextColor="{StaticResource CorPrincipal}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Entry
+                Margin="32,16,32,0"
+                HeightRequest="56"
+                HorizontalOptions="FillAndExpand"
+                Keyboard="Email"
+                Placeholder="Phone number or email address"
+                PlaceholderColor="#C4C4C4" />
+
+            <Entry
+                Margin="32,16,32,0"
+                HeightRequest="56"
+                HorizontalOptions="FillAndExpand"
+                IsPassword="True"
+                Placeholder="Password"
+                PlaceholderColor="#C4C4C4" />
+
+            <Button
+                Margin="32,16,32,0"
+                BackgroundColor="{StaticResource CorPrincipal}"
+                CornerRadius="8"
+                Text="LOG IN"
+                TextColor="White" />
+
+            <Label
+                Margin="0,16,0,16"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                Text="Forgotten password?"
+                TextColor="{StaticResource CorPrincipal}" />
+
+            <FlexLayout Margin="32,0,32,0">
+                <BoxView
+                    BackgroundColor="#C4C4C4"
+                    FlexLayout.AlignSelf="Center"
+                    FlexLayout.Grow="50"
+                    HeightRequest="1" />
+                <Label
+                    Margin="8,0,8,0"
+                    FontAttributes="Bold"
+                    Text="OR"
+                    TextColor="#C4C4C4" />
+                <BoxView
+                    BackgroundColor="#C4C4C4"
+                    FlexLayout.AlignSelf="Center"
+                    FlexLayout.Grow="50"
+                    HeightRequest="1" />
+            </FlexLayout>
+
+
+            <Button
+                Margin="32,16,32,0"
+                BackgroundColor="#008000"
+                CornerRadius="8"
+                Text="CREATE NEW FACEBOOK ACCOUNT"
+                TextColor="White" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
