@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage
+    x:Class="CursoXamarinMhtec.Views.MasterDetail"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:CursoXamarinMhtec.Views">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <FlexLayout BackgroundColor="{StaticResource CorPrincipal}" HeightRequest="80">
+                    <Label
+                        FlexLayout.AlignSelf="Center"
+                        FlexLayout.Grow="100"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Center"
+                        Text="MHTec Sistemas"
+                        TextColor="White" />
+                </FlexLayout>
+                <ListView
+                    HasUnevenRows="false"
+                    ItemsSource="{Binding Menus}"
+                    RowHeight="56"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <FlexLayout>
+                                    <Image
+                                        Margin="16,0,24,0"
+                                        FlexLayout.AlignSelf="Center"
+                                        HeightRequest="40"
+                                        Source="{Binding Imagem}"
+                                        WidthRequest="40" />
+                                    <Label
+                                        FlexLayout.AlignSelf="Center"
+                                        FlexLayout.Grow="100"
+                                        Text="{Binding Texto}"
+                                        TextColor="Black" />
+                                </FlexLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <BoxView
+                    BackgroundColor="#f4f4f4"
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand" />
+                <FlexLayout Margin="0,0,0,8">
+                    <Image
+                        Margin="16,0,24,0"
+                        FlexLayout.AlignSelf="Center"
+                        HeightRequest="40"
+                        Source="ic_exit_to_app"
+                        WidthRequest="40" />
+                    <Label
+                        FlexLayout.AlignSelf="Center"
+                        FlexLayout.Grow="100"
+                        Text="Sair"
+                        TextColor="Black" />
+                </FlexLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
