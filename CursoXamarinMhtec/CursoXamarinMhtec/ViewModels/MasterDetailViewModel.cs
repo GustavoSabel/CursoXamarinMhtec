@@ -12,11 +12,31 @@ namespace CursoXamarinMhtec.ViewModels
             CriarMenus();
         }
 
+        private MenuModel _menuSelecionado;
+        public MenuModel MenuSelecionado
+        {
+            get => _menuSelecionado;
+            set
+            {
+                SetProperty(ref _menuSelecionado, value);
+
+                if (value is null)
+                    return;
+
+                NavegarParaAView();
+            }
+        }
+
+        private async void NavegarParaAView()
+        {
+            await NavigationService.NavigateAsync($"MasterDetail/NavigationPage/{MenuSelecionado.PaginaDestino}");
+        }
+
         private void CriarMenus()
         {
             var menus = new List<MenuModel>
             {
-                CriarItemDoMenu("ic_person", "Clientes", "Clientes"),
+                CriarItemDoMenu("ic_person", "Clientes", "ListagemDeClientes"),
                 CriarItemDoMenu("ic_list_alt", "Produtos", "Produtos"),
                 CriarItemDoMenu("ic_shopping_cart", "Pedidos", "Pedidos")
             };

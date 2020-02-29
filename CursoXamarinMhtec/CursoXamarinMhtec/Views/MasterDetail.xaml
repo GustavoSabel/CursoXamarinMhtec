@@ -21,6 +21,7 @@
                     HasUnevenRows="false"
                     ItemsSource="{Binding Menus}"
                     RowHeight="56"
+                    SelectedItem="{Binding MenuSelecionado}"
                     SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>

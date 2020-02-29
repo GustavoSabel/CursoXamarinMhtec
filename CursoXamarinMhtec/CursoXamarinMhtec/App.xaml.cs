@@ -25,7 +25,7 @@ namespace CursoXamarinMhtec
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync("/MasterDetail/NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("/MasterDetail/NavigationPage/ListagemDeClientes");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -46,6 +46,8 @@ namespace CursoXamarinMhtec
             containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
             containerRegistry.RegisterForNavigation<EsqueciMinhaSenha, EsqueciMinhaSenhaViewModel>();
             containerRegistry.RegisterForNavigation<MasterDetail>();
+            containerRegistry.RegisterForNavigation<ListagemDeClientes, ListagemDeClientesViewModel>();
+            containerRegistry.RegisterForNavigation<CadastrarCliente, CadastrarClienteViewModel>();
         }
     }
 }
